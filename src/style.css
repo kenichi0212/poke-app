@@ -1,0 +1,182 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: block;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.vanilla:hover {
+  filter: drop-shadow(0 0 2em #f7df1eaa);
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+.search-container {
+  width: 100%;
+  text-align: center;
+  max-width: 600px;
+  margin-bottom: 20px;
+  text-align: center;
+  position: sticky; /* 画面上部に固定 */
+  top: 0;
+  background-color: white;
+  padding: 10px 0;
+  z-index: 100;
+}
+.search-inbox {
+margin-top: 20px 0;
+}
+#serch-input {
+  padding: 10px 20px;
+  width: 70%;
+  border-radius: 30px;
+  border: 1px solid #ffcb05;
+  font-size: 1.1lem;
+}
+.description {
+background: #f0f0f0;
+padding: 15px;
+border-radius: 10px;
+margin: 20px auto;
+max-width: 400px;
+line-height: left;
+font-size: 0.95rem;
+}
+
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+/* ポケモンを並べる外枠の設定 */
+#list-container {
+  display: grid; /* グリッド表示にする */
+  /* 横幅に合わせて、最低150pxのカードを並べられるだけ並べる */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 200px)); 
+  gap: 20px;    /* カードとカードの隙間 */
+  padding: 20px;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1280px;
+  justify-content: center; /* 全体を真ん中に寄せる */
+}
+
+/* カード自体の設定 */
+.pokemon-card {
+  background: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s; /* マウスを乗せた時に動かす準備 */
+  max-width: 250px;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.pokemon-card:hover {
+  transform: translateY(-5px); /* マウスを乗せると少し浮き上がる */
+}
+
+.detail-btn {
+  width: 100%;
+  border: none;
+  background: none;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.detail-btn img {
+  width: 100px;
+  height: 100px;
+}
