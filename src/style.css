@@ -101,25 +101,37 @@ button:focus-visible {
 }
 .search-container {
   width: 100%;
-  text-align: center;
-  max-width: 600px;
-  margin-bottom: 20px;
-  text-align: center;
-  position: sticky; /* 画面上部に固定 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* 1. 検索窓の下に20pxの余白を持たせる高さに設定 */
+  padding: 20px 0 40px 0; /* 下側(bottom)の余白を多めに取る */
+  
+  /* 2. 背景を白（または背景色）にして、後ろのカードを完全に隠す */
+  background-color: #ffffff; 
+  
+  /* 3. すりガラス設定は削除 */
+  /* backdrop-filter: blur(5px); ←消す */
+
+  position: sticky;
   top: 0;
-  background-color: white;
-  padding: 10px 0;
-  z-index: 100;
+  z-index: 1000;
 }
+
 .search-inbox {
 margin-top: 20px 0;
+
 }
-#serch-input {
-  padding: 10px 20px;
-  width: 70%;
-  border-radius: 30px;
-  border: 1px solid #ffcb05;
-  font-size: 1.1lem;
+#search-input {
+  /* 前回の「太く・長く」設定 */
+  width: 90%;
+  max-width: 800px;
+  padding: 15px 30px;
+  border: 5px solid #ffcb05;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.5); /* 入力欄自体を少し白く */
+  outline: none;
 }
 .description {
 background: #f0f0f0;
@@ -145,7 +157,6 @@ font-size: 0.95rem;
   /* 横幅に合わせて、最低150pxのカードを並べられるだけ並べる */
   grid-template-columns: repeat(auto-fit, minmax(150px, 200px)); 
   gap: 20px;    /* カードとカードの隙間 */
-  padding: 20px;
   width: 100%;
   margin: 0 auto;
   max-width: 1280px;
