@@ -108,9 +108,9 @@ async function fetchAllPokemon() {
     const speciesListResponse = await axios.get('https://pokeapi.co/api/v2/pokemon-species?limit=151');
     const pokemonResponse = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=151');
     const speciesData = speciesListResponse.data.results;
-    const pokemonList = pokemonResponse.data.results;   
+    const pokemonList = pokemonResponse.data.results; 
+      
     // 2. 151匹分の詳細（日本語名）を並列で取得して整理する
-    // ※ここが少し高度ですが、一気に通信して日本語名の配列を作ります
     AllPokemonData = await Promise.all(
       speciesData.map(async (s, index) => {
         const res = await axios.get(s.url);
